@@ -9,12 +9,10 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:14px;}
-/* Top bar */
 .topbar{background:#1a1a2e;color:#fff;padding:12px 24px;display:flex;align-items:center;gap:16px;}
 .topbar h1{font-size:16px;font-weight:600;letter-spacing:0.3px;}
 .topbar .subtitle{font-size:12px;color:#9090b0;margin-left:4px;}
 .status-pill{margin-left:auto;font-size:11px;padding:4px 10px;border-radius:20px;background:#2a2a4e;color:#9090d0;}
-/* Upload screen */
 #upload-screen{max-width:680px;margin:60px auto;padding:0 24px;}
 .upload-card{background:#fff;border-radius:12px;border:1px solid #e0e0e0;padding:32px;}
 .upload-card h2{font-size:18px;font-weight:600;margin-bottom:6px;}
@@ -33,27 +31,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .run-btn{width:100%;padding:14px;background:#4a6cf7;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s;}
 .run-btn:hover{background:#3a5ce7;}
 .run-btn:disabled{background:#b0b8d0;cursor:not-allowed;}
-/* Progress */
 #progress-screen{max-width:480px;margin:80px auto;padding:0 24px;text-align:center;}
 .progress-bar-wrap{background:#e0e0e0;border-radius:8px;height:8px;margin:20px 0;}
 .progress-bar-fill{height:100%;border-radius:8px;background:#4a6cf7;transition:width 0.4s;}
 .progress-msg{font-size:13px;color:#666;}
-/* Main dashboard */
 #dashboard-screen{display:none;}
-.dash-topbar{background:#fff;border-bottom:1px solid #e0e0e0;padding:10px 24px;display:flex;align-items:center;gap:12px;}
+.dash-topbar{background:#fff;border-bottom:1px solid #e0e0e0;padding:10px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .dash-topbar select{font-size:13px;padding:6px 10px;border:1px solid #d0d0d0;border-radius:6px;background:#fff;}
 .dash-topbar .site-badge{font-size:11px;padding:3px 10px;border-radius:20px;background:#fef3c7;color:#92400e;font-weight:600;}
 .new-analysis-btn{margin-left:auto;font-size:12px;padding:6px 14px;border:1px solid #d0d0d0;border-radius:6px;background:#fff;cursor:pointer;}
 .new-analysis-btn:hover{background:#f5f5f5;}
-/* Tabs */
 .tab-row{background:#fff;border-bottom:1px solid #e0e0e0;padding:0 24px;display:flex;gap:0;overflow-x:auto;}
 .tab{font-size:13px;padding:12px 18px;cursor:pointer;color:#666;border-bottom:2px solid transparent;white-space:nowrap;transition:color 0.2s;}
 .tab:hover{color:#1a1a1a;}
 .tab.active{color:#4a6cf7;border-bottom:2px solid #4a6cf7;font-weight:600;}
-/* Content */
 .tab-content{padding:20px 24px;display:none;}
 .tab-content.active{display:block;}
-/* Metric cards */
 .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
 .metric-card{background:#fff;border-radius:10px;border:1px solid #e8e8e8;padding:16px;}
 .metric-card .mlabel{font-size:11px;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px;}
@@ -63,39 +56,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .metric-card.amber .mval{color:#d97706;}
 .metric-card.red .mval{color:#dc2626;}
 .metric-card.blue .mval{color:#2563eb;}
-/* Two col */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 .card{background:#fff;border-radius:10px;border:1px solid #e8e8e8;padding:16px;}
 .card-title{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
 .card-title span{font-size:11px;color:#aaa;font-weight:400;}
-/* Bucket rows */
 .bucket-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;transition:background 0.15s;}
 .bucket-row:last-child{border-bottom:none;}
 .bucket-row:hover{background:#fafafa;margin:0 -16px;padding:10px 16px;}
 .bucket-name{font-size:13px;font-weight:500;}
 .bucket-sub{font-size:11px;color:#aaa;margin-top:2px;}
-/* Badges */
 .badge{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:600;white-space:nowrap;}
 .badge-green{background:#dcfce7;color:#166534;}
 .badge-amber{background:#fef3c7;color:#92400e;}
 .badge-red{background:#fee2e2;color:#991b1b;}
 .badge-blue{background:#dbeafe;color:#1e40af;}
 .badge-gray{background:#f3f4f6;color:#374151;}
-/* Table */
 .table-wrap{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:12px;}
 th{text-align:left;padding:9px 10px;border-bottom:2px solid #e8e8e8;color:#666;font-weight:600;white-space:nowrap;background:#fafafa;}
 td{padding:9px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top;}
 tr:hover td{background:#fafafa;}
 .td-truncate{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-/* AI panel */
 .ai-panel{background:#f8f7ff;border-left:3px solid #7c3aed;padding:14px 16px;margin-top:16px;}
 .ai-label{font-size:11px;font-weight:700;color:#7c3aed;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
 .ai-text{font-size:13px;color:#1a1a1a;line-height:1.7;}
 .ai-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
 .ai-btn{font-size:12px;padding:5px 12px;border:1px solid #d0d0d0;border-radius:6px;background:#fff;cursor:pointer;color:#444;transition:background 0.15s;}
 .ai-btn:hover{background:#f0f0f0;}
-/* Chat */
 .chat-log{display:flex;flex-direction:column;gap:12px;margin-bottom:16px;max-height:400px;overflow-y:auto;}
 .chat-msg-ai{background:#f8f7ff;border-left:3px solid #7c3aed;padding:12px 14px;font-size:13px;line-height:1.6;}
 .chat-msg-ai .chat-who{font-size:11px;font-weight:700;color:#7c3aed;margin-bottom:4px;}
@@ -106,23 +93,14 @@ tr:hover td{background:#fafafa;}
 .chat-send{padding:10px 18px;background:#4a6cf7;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;}
 .chat-send:hover{background:#3a5ce7;}
 .chat-quick{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
-/* Score bar */
 .score-bar-wrap{display:flex;align-items:center;gap:8px;}
 .score-bar-track{flex:1;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;}
 .score-bar-fill{height:100%;border-radius:3px;}
-/* Filters */
 .filter-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;}
 .filter-row select,.filter-row input{font-size:12px;padding:6px 10px;border:1px solid #d0d0d0;border-radius:6px;background:#fff;}
 .filter-row input{flex:1;min-width:160px;}
-/* Known issues counters */
 .issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}
-/* Loading overlay */
-#loading-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;}
-#loading-overlay.show{display:flex;}
-.loading-box{background:#fff;border-radius:12px;padding:32px 40px;text-align:center;}
-.spinner{width:40px;height:40px;border:4px solid #e0e0e0;border-top:4px solid #4a6cf7;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-/* Responsive */
+.info-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:#78350f;}
 @media(max-width:600px){
   .metric-grid{grid-template-columns:1fr 1fr;}
   .two-col{grid-template-columns:1fr;}
@@ -138,37 +116,26 @@ tr:hover td{background:#fafafa;}
   <span class="status-pill" id="top-status">No data loaded</span>
 </div>
 
-<!-- Loading overlay -->
-<div id="loading-overlay">
-  <div class="loading-box">
-    <div class="spinner"></div>
-    <div id="loading-msg" style="font-size:14px;color:#444;">Processing files...</div>
-  </div>
-</div>
-
-<!-- UPLOAD SCREEN -->
 <div id="upload-screen">
   <div class="upload-card">
     <h2>Upload site files</h2>
-    <p>Upload your Foreseer export, LinX export, and Asset Type Dictionary to begin the comparison.</p>
-
+    <p>Upload your Foreseer export (foreseer_updated.xlsm), the full LinX export, and optionally the Asset Type Dictionary.</p>
     <div class="upload-grid">
       <div class="upload-zone" id="zone-foreseer" onclick="document.getElementById('file-foreseer').click()">
         <input type="file" id="file-foreseer" accept=".xlsx,.xls,.xlsm" onchange="handleFile('foreseer',this)"/>
         <div class="icon">📊</div>
         <div class="label">Foreseer export</div>
-        <div class="sub">.xlsx / .xlsm</div>
+        <div class="sub">foreseer_updated.xlsm</div>
         <div class="filename" id="fname-foreseer"></div>
       </div>
       <div class="upload-zone" id="zone-linx" onclick="document.getElementById('file-linx').click()">
         <input type="file" id="file-linx" accept=".xlsx,.xls" onchange="handleFile('linx',this)"/>
         <div class="icon">🔗</div>
         <div class="label">LinX export</div>
-        <div class="sub">.xlsx — "Data" sheet</div>
+        <div class="sub">template__2_.xlsx (all sites)</div>
         <div class="filename" id="fname-linx"></div>
       </div>
     </div>
-
     <div class="dict-row">
       <label>Asset Type Dictionary (optional — uses built-in if not uploaded)</label>
       <div class="upload-zone" id="zone-dict" onclick="document.getElementById('file-dict').click()" style="padding:14px;">
@@ -180,22 +147,17 @@ tr:hover td{background:#fafafa;}
         <div class="filename" id="fname-dict"></div>
       </div>
     </div>
-
-    <button class="run-btn" id="run-btn" onclick="runComparison()" disabled>
-      Run comparison
-    </button>
+    <button class="run-btn" id="run-btn" onclick="runComparison()" disabled>Run comparison</button>
     <div id="upload-error" style="color:#dc2626;font-size:12px;margin-top:10px;"></div>
   </div>
 </div>
 
-<!-- PROGRESS SCREEN -->
 <div id="progress-screen" style="display:none;">
   <div style="font-size:16px;font-weight:600;margin-bottom:8px;">Processing your files...</div>
   <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
-  <div class="progress-msg" id="progress-msg">Loading Foreseer data...</div>
+  <div class="progress-msg" id="progress-msg">Loading data...</div>
 </div>
 
-<!-- DASHBOARD SCREEN -->
 <div id="dashboard-screen">
   <div class="dash-topbar">
     <span style="font-size:13px;font-weight:600;color:#444;">Site:</span>
@@ -212,7 +174,6 @@ tr:hover td{background:#fafafa;}
     <div class="tab" onclick="showTab('chat',this)">AI assistant</div>
   </div>
 
-  <!-- OVERVIEW TAB -->
   <div class="tab-content active" id="tab-overview">
     <div class="metric-grid">
       <div class="metric-card amber">
@@ -236,7 +197,6 @@ tr:hover td{background:#fafafa;}
         <div class="msub">need team input</div>
       </div>
     </div>
-
     <div class="two-col">
       <div class="card">
         <div class="card-title">GIG bucket breakdown <span>click to drill in</span></div>
@@ -262,20 +222,17 @@ tr:hover td{background:#fafafa;}
         <canvas id="bar-chart" height="200"></canvas>
       </div>
     </div>
-
     <div class="card" style="margin-bottom:16px;">
       <div class="card-title">Foreseer vs LinX — asset type coverage</div>
       <canvas id="coverage-chart" height="160"></canvas>
     </div>
-
-    <div class="ai-panel" id="ai-overview-panel">
+    <div class="ai-panel">
       <div class="ai-label">✦ AI summary</div>
       <div class="ai-text" id="ai-overview-text">Upload files and run comparison to see AI analysis.</div>
       <div class="ai-actions" id="ai-overview-actions"></div>
     </div>
   </div>
 
-  <!-- DETAIL TAB -->
   <div class="tab-content" id="tab-detail">
     <div class="filter-row">
       <select id="filter-bucket" onchange="renderDetailTable()">
@@ -292,7 +249,6 @@ tr:hover td{background:#fafafa;}
     </div>
   </div>
 
-  <!-- KNOWN ISSUES TAB -->
   <div class="tab-content" id="tab-issues">
     <div class="issues-grid">
       <div class="metric-card red">
@@ -313,7 +269,7 @@ tr:hover td{background:#fafafa;}
     </div>
     <div class="card">
       <div class="card-title">Known issues log</div>
-      <div class="table-wrap" id="issues-table-wrap">
+      <div class="table-wrap">
         <table>
           <thead><tr><th>Device name</th><th>Issue type</th><th>Flag reason</th></tr></thead>
           <tbody id="issues-tbody"><tr><td colspan="3" style="color:#aaa;text-align:center;padding:20px;">No issues flagged yet.</td></tr></tbody>
@@ -322,11 +278,10 @@ tr:hover td{background:#fafafa;}
     </div>
     <div class="ai-panel" style="margin-top:16px;">
       <div class="ai-label">✦ AI recommendation</div>
-      <div class="ai-text" id="ai-issues-text">Run a comparison to see recommendations for your known issues.</div>
+      <div class="ai-text" id="ai-issues-text">Run a comparison to see recommendations.</div>
     </div>
   </div>
 
-  <!-- SERIAL / IP TAB -->
   <div class="tab-content" id="tab-serial">
     <div class="metric-grid">
       <div class="metric-card green">
@@ -356,7 +311,6 @@ tr:hover td{background:#fafafa;}
     </div>
   </div>
 
-  <!-- AI CHAT TAB -->
   <div class="tab-content" id="tab-chat">
     <div class="card">
       <div class="chat-log" id="chat-log">
@@ -382,14 +336,14 @@ let state = {
   foreseerRaw: null,
   linxRaw: null,
   dictRaw: null,
+  prefixToDns: {},
   sites: [],
   currentSite: null,
-  results: {},        // keyed by site dns
-  knownIssues: {},    // keyed by site dns
+  results: {},
+  knownIssues: {},
   apiKey: null
 };
 
-// Placeholder values - matches the SQL query exactly
 const PLACEHOLDERS = new Set([
   'tbd','unknown','na','n/a','none','-','null',
   'no value','select to enter sn','0',''
@@ -406,107 +360,119 @@ function isPlaceholder(v) {
 function handleFile(type, input) {
   const file = input.files[0];
   if (!file) return;
-  const zone = document.getElementById('zone-' + type);
-  const fname = document.getElementById('fname-' + type);
-  zone.classList.add('has-file');
-  fname.textContent = file.name;
-
+  document.getElementById('zone-' + type).classList.add('has-file');
+  document.getElementById('fname-' + type).textContent = file.name;
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
       if (file.name.endsWith('.csv')) {
         state[type + 'Raw'] = { csv: e.target.result };
       } else {
-        const wb = XLSX.read(e.target.result, { type: 'binary', cellDates: true });
-        state[type + 'Raw'] = wb;
+        state[type + 'Raw'] = XLSX.read(e.target.result, { type: 'binary', cellDates: true });
       }
       checkReadyToRun();
     } catch(err) {
       document.getElementById('upload-error').textContent = 'Error reading ' + file.name + ': ' + err.message;
     }
   };
-  if (file.name.endsWith('.csv')) {
-    reader.readAsText(file);
-  } else {
-    reader.readAsBinaryString(file);
-  }
+  file.name.endsWith('.csv') ? reader.readAsText(file) : reader.readAsBinaryString(file);
 }
 
 function checkReadyToRun() {
-  const ready = state.foreseerRaw && state.linxRaw;
-  document.getElementById('run-btn').disabled = !ready;
+  document.getElementById('run-btn').disabled = !(state.foreseerRaw && state.linxRaw);
 }
 
 // ============================================================
-// COMPARISON ENGINE
+// PARSE FORESEER — reads Result Data sheet + builds MSL lookup
 // ============================================================
-function runComparison() {
-  showLoading('Parsing Foreseer data...');
-
-  setTimeout(() => {
-    try {
-      // Parse Foreseer
-      setProgress(10, 'Parsing Foreseer data...');
-      const foreseerRows = parseForeseer();
-
-      setProgress(25, 'Parsing LinX data...');
-      const linxRows = parseLinX();
-
-      setProgress(40, 'Loading asset type dictionary...');
-      const dictMap = parseDict();
-
-      setProgress(55, 'Detecting sites...');
-      const sites = detectSites(foreseerRows, linxRows);
-      state.sites = sites;
-
-      setProgress(65, 'Running comparison engine...');
-      sites.forEach(site => {
-        const r = compareSite(site, foreseerRows, linxRows, dictMap);
-        state.results[site] = r.comparison;
-        state.knownIssues[site] = r.issues;
-      });
-
-      setProgress(85, 'Building AI summaries...');
-      setProgress(100, 'Done!');
-
-      setTimeout(() => {
-        hideLoading();
-        showDashboard();
-      }, 400);
-
-    } catch(err) {
-      hideLoading();
-      document.getElementById('upload-error').textContent = 'Comparison error: ' + err.message;
-      console.error(err);
-    }
-  }, 100);
-}
-
 function parseForeseer() {
   const wb = state.foreseerRaw;
-  // Try 'Raw data' sheet first, then first sheet
-  let sheetName = wb.SheetNames.find(s => s.toLowerCase().includes('raw')) || wb.SheetNames[0];
+
+  // Build prefix->DNS lookup from MSL sheet
+  state.prefixToDns = {};
+  const mslSheet = wb.Sheets['MSL'];
+  if (mslSheet) {
+    const mslRows = XLSX.utils.sheet_to_json(mslSheet, { defval: null, raw: false });
+    mslRows.forEach(r => {
+      // Find the short DNS (e.g. a2atlanta.ga) from any column value
+      let shortDns = '';
+      Object.values(r).forEach(v => {
+        if (v && typeof v === 'string') {
+          const lower = v.toLowerCase();
+          // Match patterns like a2atlanta.ga.atlanta.comcast.net
+          if ((lower.includes('.ga.') || lower.includes('.fl.') ||
+               lower.includes('.pa.') || lower.includes('.va.') ||
+               lower.includes('.tn.') || lower.includes('.ms.') ||
+               lower.includes('.il.') || lower.includes('.nj.') ||
+               lower.includes('.tx.') || lower.includes('.co.') ||
+               lower.includes('.ma.') || lower.includes('.de.') ||
+               lower.includes('.wa.') || lower.includes('.ut.') ||
+               lower.includes('.md.') || lower.includes('.in.') ||
+               lower.includes('.ca.') || lower.includes('.oh.') ||
+               lower.includes('.mi.') || lower.includes('.mn.') ||
+               lower.includes('.mo.') || lower.includes('.wi.') ||
+               lower.includes('.nc.') || lower.includes('.sc.') ||
+               lower.includes('.ct.') || lower.includes('.ny.') ||
+               lower.includes('.or.') || lower.includes('.id.')) &&
+              lower.includes('comcast')) {
+            const parts = v.trim().split('.');
+            if (parts.length >= 2) shortDns = parts[0] + '.' + parts[1];
+          }
+        }
+      });
+      if (shortDns) {
+        // Map all prefix columns to this DNS
+        const prefixCols = [
+          'Foreseer Unique Site Prefix',
+          'Foreseer Unique Site Prefix - Base1',
+          'Foreseer Unique Site Prefix - Base2'
+        ];
+        prefixCols.forEach(col => {
+          const p = r[col];
+          if (p && String(p).trim()) {
+            state.prefixToDns[String(p).trim().toUpperCase()] = shortDns.toLowerCase();
+          }
+        });
+        // Also map any column that looks like a hub code (all caps, 8-12 chars)
+        Object.values(r).forEach(v => {
+          if (v && typeof v === 'string' && /^[A-Z0-9]{6,12}$/.test(v.trim())) {
+            if (!state.prefixToDns[v.trim()]) {
+              state.prefixToDns[v.trim()] = shortDns.toLowerCase();
+            }
+          }
+        });
+      }
+    });
+    console.log('MSL lookup built:', Object.keys(state.prefixToDns).length, 'prefixes');
+  }
+
+  // Read the actual data — prefer 'Result Data', fallback to first sheet
+  const sheetName = wb.SheetNames.find(s => s === 'Result Data')
+    || wb.SheetNames.find(s => s.toLowerCase().includes('raw'))
+    || wb.SheetNames[0];
+  console.log('Reading Foreseer sheet:', sheetName);
   const ws = wb.Sheets[sheetName];
-  const rows = XLSX.utils.sheet_to_json(ws, { defval: null, raw: false });
-  return rows;
+  return XLSX.utils.sheet_to_json(ws, { defval: null, raw: false });
 }
 
+// ============================================================
+// PARSE LINX
+// ============================================================
 function parseLinX() {
   const wb = state.linxRaw;
-  let sheetName = wb.SheetNames.find(s => s.toLowerCase() === 'data') || wb.SheetNames[0];
+  const sheetName = wb.SheetNames.find(s => s.toLowerCase() === 'data') || wb.SheetNames[0];
   const ws = wb.Sheets[sheetName];
-  const rows = XLSX.utils.sheet_to_json(ws, { defval: null, raw: false });
-  return rows;
+  return XLSX.utils.sheet_to_json(ws, { defval: null, raw: false });
 }
 
+// ============================================================
+// PARSE DICTIONARY
+// ============================================================
 function parseDict() {
-  // Returns map: combo_key_norm -> device_type_desc
   const map = new Map();
-
   if (state.dictRaw) {
     let rows = [];
     if (state.dictRaw.csv) {
-      // Parse CSV manually - simple split
       const lines = state.dictRaw.csv.split('\n');
       const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g,''));
       for (let i = 1; i < lines.length; i++) {
@@ -521,43 +487,53 @@ function parseDict() {
       rows = XLSX.utils.sheet_to_json(ws, { defval: null, raw: false });
     }
     rows.forEach(r => {
-      const comboKey = r['dev prefix / mod prefix combo for lookup'] ||
-                       r['dev_prefix_/_mod_prefix_combo_for_lookup'] || '';
-      const desc = r['Device Type Description'] || r['device_type_desc'] || '';
+      const comboKey = r['dev prefix / mod prefix combo for lookup'] || '';
+      const desc = r['Device Type Description'] || '';
       if (comboKey && comboKey.trim() && desc && desc.trim()) {
         const k = comboKey.trim().toLowerCase();
         if (!map.has(k)) map.set(k, desc.trim());
       }
     });
   }
-
-  // If no dict uploaded or map is empty, use built-in subset
   if (map.size === 0) {
     const builtIn = [
-      ['brkr','AC Breaker / AC Breaker Trip Unit'],['pmtr','AC Power Meter/PQM'],
-      ['pmtrsup','AC Power Meter/PQM - Supplemental Device'],['bw','Busway System'],
-      ['bwpl','Busway System - Busplug'],['bwb','Busway System - Busplug Breaker'],
-      ['disc','Disconnect'],['ups','UPS, AC'],['gen','Generator, Stationary - Single Generator Controller'],
-      ['dcp','DC Plant'],['dcpbat','DC Plant, Battery'],['dcprec','DC Plant, Rectifiers'],
-      ['dcppnl','DC Plant, Panel'],['dcpbay','DC Plant, Bay'],
-      ['dcpbs','DC Plant, Battery String'],['fap','Fuse Alarm Panel'],
-      ['bap','Breaker Alarm Panel'],['hvac','HVAC, General'],
-      ['hvaccu','Condenser Unit (ACU, CU)'],['hvacrtu','HVAC, Packaged, Roof-Top Cooling Unit'],
-      ['hvacahu','HVAC, Air Handler Unit'],['hvaccrac','HVAC, Computer Room Air Conditioner'],
-      ['hvacctrl','HVAC, Controller'],['iologik','Aggregator, ioLogik Moxa'],
-      ['avtech','Aggregator, Avtech Room Alert'],['quest','Aggregator, Quest - System'],
-      ['xfmr','Transformer, Voltage'],['ats','Transfer Switch, Automatic'],
+      ['brkr','AC Breaker / AC Breaker Trip Unit'],
+      ['pmtr','AC Power Meter/PQM'],
+      ['pmtrsup','AC Power Meter/PQM - Supplemental Device'],
+      ['bw','Busway System'],['bwpl','Busway System - Busplug'],
+      ['bwb','Busway System - Busplug Breaker'],
+      ['disc','Disconnect'],['ups','UPS, AC'],
+      ['gen','Generator, Stationary - Single Generator Controller'],
+      ['dcp','DC Plant'],['dcpbat','DC Plant, Battery'],
+      ['dcprec','DC Plant, Rectifiers'],['dcppnl','DC Plant, Panel'],
+      ['dcpbay','DC Plant, Bay'],['dcpbs','DC Plant, Battery String'],
+      ['fap','Fuse Alarm Panel'],['bap','Breaker Alarm Panel'],
+      ['hvac','HVAC, General'],['hvaccu','Condenser Unit (ACU, CU)'],
+      ['hvacrtu','HVAC, Packaged, Roof-Top Cooling Unit'],
+      ['hvacahu','HVAC, Air Handler Unit'],
+      ['hvaccrac','HVAC, Computer Room Air Conditioner'],
+      ['hvacctrl','HVAC, Controller'],
+      ['iologik','Aggregator, ioLogik Moxa'],
+      ['avtech','Aggregator, Avtech Room Alert'],
+      ['quest','Aggregator, Quest - System'],
+      ['xfmr','Transformer, Voltage'],
+      ['ats','Transfer Switch, Automatic'],
       ['mts','Transfer Switch, Manual'],['inv','Inverter'],
       ['bdcbb','BDCBB (Battery Distribution Circuit Breaker Bay)'],
       ['bdfb','BDFB (Battery Distribution Fuse Bay)'],
-      ['spdpnl','Surge Protection Device'],['gnd','Ground System Monitoring, Standalone'],
-      ['pmtru','AC Power Meter/PQM'],['rpp','Remote Power Panel'],
+      ['spdpnl','Surge Protection Device'],
+      ['gnd','Ground System Monitoring, Standalone'],
+      ['rpp','Remote Power Panel'],
     ];
     builtIn.forEach(([k,v]) => map.set(k,v));
   }
   return map;
 }
 
+// ============================================================
+// EXTRACT COMBO KEY from device name
+// e.g. GAATLA1038-DCP01REC -> dcprec
+// ============================================================
 function extractComboKey(deviceName) {
   if (!deviceName) return null;
   const s = String(deviceName).trim();
@@ -566,46 +542,84 @@ function extractComboKey(deviceName) {
   const afterFirst = s.substring(firstDash + 1);
   const secondDash = afterFirst.indexOf('-');
   const segment = secondDash >= 0 ? afterFirst.substring(0, secondDash) : afterFirst;
-  // Remove digits
   return segment.replace(/[0-9]/g, '').toLowerCase().trim();
 }
 
-function detectSites(foreseerRows, linxRows) {
-  const sites = new Set();
-  foreseerRows.forEach(r => {
-    const s = r['SITE_DNS'] || r['site_dns'] || r['Value.deviceLocation'] || '';
-    if (s && s.trim()) sites.add(s.trim().toLowerCase());
-  });
-  // Also add from LinX LOCATION
-  linxRows.forEach(r => {
-    const s = r['LOCATION'] || r['location'] || '';
-    if (s && s.trim()) sites.add(s.trim().toLowerCase());
-  });
-  return [...sites].filter(s => s.length > 0).sort();
+// ============================================================
+// GET SITE DNS from device name using MSL prefix lookup
+// ============================================================
+function getSiteDnsFromDevice(deviceName) {
+  if (!deviceName) return null;
+  const s = String(deviceName).trim();
+  const dash = s.indexOf('-');
+  if (dash < 0) return null;
+  const hubPrefix = s.substring(0, dash).toUpperCase();
+  return state.prefixToDns[hubPrefix] || null;
 }
 
+// ============================================================
+// DETECT SITES — only sites present in BOTH systems
+// ============================================================
+function detectSites(foreseerRows, linxRows) {
+  // Get all LinX sites first (these are the clean dns values)
+  const linxSites = new Set();
+  linxRows.forEach(r => {
+    const s = r['LOCATION'] || r['location'] || '';
+    if (s && s.trim()) linxSites.add(s.trim().toLowerCase());
+  });
+
+  // Get Foreseer sites via MSL lookup
+  const foreseerSites = new Set();
+  if (Object.keys(state.prefixToDns).length > 0) {
+    foreseerRows.forEach(r => {
+      const deviceName = r['Value.pointList.deviceName'] || '';
+      const dns = getSiteDnsFromDevice(deviceName);
+      if (dns) foreseerSites.add(dns);
+    });
+  } else {
+    // Fallback if MSL not available
+    foreseerRows.forEach(r => {
+      const s = r['SITE_DNS'] || r['site_dns'] || '';
+      if (s && s.trim()) foreseerSites.add(s.trim().toLowerCase());
+    });
+  }
+
+  // Return sites that exist in LinX (LinX is our site universe)
+  // Sorted alphabetically
+  const combined = new Set([...foreseerSites, ...linxSites]);
+  return [...combined].filter(s => s.length > 0 && linxSites.has(s)).sort();
+}
+
+// ============================================================
+// COMPARE ONE SITE
+// ============================================================
 function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
   const siteNorm = siteDns.toLowerCase().trim();
 
-  // --- Filter Foreseer rows for this site ---
+  // Filter Foreseer rows for this site using MSL prefix lookup
   const fSite = foreseerRows.filter(r => {
-    const loc = (r['SITE_DNS'] || r['site_dns'] || r['Value.deviceLocation'] || '').toLowerCase().trim();
-    return loc === siteNorm || loc.includes(siteNorm.replace('.',''));
+    const deviceName = r['Value.pointList.deviceName'] || '';
+    if (!deviceName) return false;
+    const dns = getSiteDnsFromDevice(deviceName);
+    if (dns && dns === siteNorm) return true;
+    // Fallback: direct SITE_DNS match
+    const loc = (r['SITE_DNS'] || r['site_dns'] || '').toLowerCase().trim();
+    return loc === siteNorm;
   });
 
-  // --- Filter LinX rows for this site (exclude project rows) ---
+  // Filter LinX rows for this site (exclude project rows)
   const lSite = linxRows.filter(r => {
     const loc = (r['LOCATION'] || r['location'] || '').toLowerCase().trim();
     const proj = r['PROJECT_NUMBER'] || r['project_number'] || '';
     return loc === siteNorm && (!proj || String(proj).trim() === '');
   });
 
-  // --- Flatten Foreseer: one row per deviceName ---
-  const fDeviceMap = new Map(); // deviceNameNorm -> {type, serial, uniqueId, ip, deviceNameRaw}
+  // Flatten Foreseer: pivot multiple rows per device into one row
+  const fDeviceMap = new Map();
   const knownIssues = [];
 
   fSite.forEach(r => {
-    const deviceNameRaw = r['Value.pointList.deviceName'] || r['value.pointlist.devicename'] || '';
+    const deviceNameRaw = r['Value.pointList.deviceName'] || '';
     if (!deviceNameRaw || String(deviceNameRaw).trim() === '') return;
 
     const deviceNameNorm = String(deviceNameRaw).trim().toLowerCase();
@@ -618,7 +632,6 @@ function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
       const comboKey = extractComboKey(deviceNameRaw);
       const dictType = comboKey ? dictMap.get(comboKey) : null;
       const resolvedType = dictType || String(deviceTypeRaw).trim() || 'Unknown';
-
       fDeviceMap.set(deviceNameNorm, {
         deviceNameRaw: String(deviceNameRaw).trim(),
         deviceNameNorm,
@@ -626,54 +639,51 @@ function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
         comboKey,
         serial: null,
         uniqueId: null,
-        ip: ipRaw ? String(ipRaw).trim() : null,
+        ip: ipRaw && !isPlaceholder(ipRaw) ? String(ipRaw).trim() : null,
         ipFromPoints: null,
       });
     }
 
     const dev = fDeviceMap.get(deviceNameNorm);
-
-    // Pivot point rows
     const pnLower = pointName.toLowerCase();
-    if (pnLower.includes('serial')) {
-      if (!isPlaceholder(pointValue)) dev.serial = pointValue;
+
+    // Pivot serial number
+    if (pnLower.includes('serial') && !isPlaceholder(pointValue)) {
+      dev.serial = pointValue;
     }
-    if (pnLower === 'i_unique id' || pnLower.includes('unique') && pnLower.includes('id')) {
-      if (!isPlaceholder(pointValue)) dev.uniqueId = pointValue;
+    // Pivot unique ID
+    if ((pnLower === 'i_unique id' || (pnLower.includes('unique') && pnLower.includes('id'))) && !isPlaceholder(pointValue)) {
+      dev.uniqueId = pointValue;
     }
-    if (pnLower.includes('ip')) {
-      if (!isPlaceholder(pointValue) && !dev.ipFromPoints) dev.ipFromPoints = pointValue;
+    // Pivot IP from point rows
+    if (pnLower.includes('ip') && !isPlaceholder(pointValue) && !dev.ipFromPoints) {
+      dev.ipFromPoints = pointValue;
     }
-    // Best IP: prefer comms column
+    // Prefer comms IP column
     if (ipRaw && !isPlaceholder(ipRaw)) dev.ip = String(ipRaw).trim();
   });
 
-  // Known issues detection
-  fDeviceMap.forEach((dev, key) => {
+  // Flag known issues
+  fDeviceMap.forEach((dev) => {
     const name = dev.deviceNameRaw;
-    // Hub code mismatch check
-    if (name.match(/^GAA5-/i)) {
+    if (/^GAA5-/i.test(name)) {
       knownIssues.push({ name, type: 'Hub code mismatch', reason: 'GAA5 prefix does not match expected site pattern. Requires team verification.' });
     }
-    // BAP/FAP conflict
     if (dev.comboKey === 'bap' && dev.deviceType && dev.deviceType.toLowerCase().includes('fap')) {
       knownIssues.push({ name, type: 'BAP/FAP conflict', reason: 'Device name prefix is BAP but device type says FAP. Data contradicts itself in Foreseer.' });
     }
-    // HVAC generic
     if (dev.comboKey === 'hvac' && dev.deviceType && dev.deviceType.toLowerCase() === 'hvac, general') {
-      knownIssues.push({ name, type: 'HVAC generic', reason: 'Foreseer uses generic HVAC label but LinX requires specific subtypes. Escalate at team meeting.' });
+      knownIssues.push({ name, type: 'HVAC generic', reason: 'Foreseer uses generic HVAC but LinX requires specific subtypes. Escalate at team meeting.' });
     }
   });
 
-  // --- Deduplicate Foreseer by deviceName (already one per name) ---
-  // Exclude data aggregators
+  // Exclude data aggregators from comparison
   const aggregatorTypes = ['aggregator','data aggregator'];
   const fDevices = [...fDeviceMap.values()].filter(d => {
-    const t = (d.deviceType || '').toLowerCase();
-    return !aggregatorTypes.some(a => t.includes(a));
+    return !aggregatorTypes.some(a => (d.deviceType || '').toLowerCase().includes(a));
   });
 
-  // --- Deduplicate LinX by ASSET_ID ---
+  // Deduplicate LinX by ASSET_ID
   const lAssetMap = new Map();
   lSite.forEach(r => {
     const assetId = r['ASSET_ID'] || r['asset_id'] || '';
@@ -682,19 +692,18 @@ function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
     if (!lAssetMap.has(idNorm)) {
       lAssetMap.set(idNorm, {
         assetId: String(assetId).trim(),
-        assetName: r['ASSET_NAME'] || r['asset_name'] || '',
-        subtype: String(r['ASSET_SUB_TYPE'] || r['asset_sub_type'] || '').trim(),
-        serial: r['SERIAL_NUMBER'] || r['serial_number'] || null,
-        ip: r['IP_ADDRESS'] || r['ip_address'] || r['ï»¿IP_ADDRESS'] || null,
+        assetName: r['ASSET_NAME'] || '',
+        subtype: String(r['ASSET_SUB_TYPE'] || '').trim(),
+        serial: r['SERIAL_NUMBER'] || null,
+        ip: r['IP_ADDRESS'] || r['ï»¿IP_ADDRESS'] || null,
       });
     }
   });
   const lAssets = [...lAssetMap.values()].filter(d => {
-    const t = (d.subtype || '').toLowerCase();
-    return !aggregatorTypes.some(a => t.includes(a));
+    return !aggregatorTypes.some(a => (d.subtype || '').toLowerCase().includes(a));
   });
 
-  // --- Group by device type ---
+  // Group by device type
   const fByType = new Map();
   fDevices.forEach(d => {
     const t = d.deviceType || 'Unknown';
@@ -709,14 +718,13 @@ function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
     lByType.get(t).push(d);
   });
 
-  // --- Build comparison rows ---
+  // Build comparison rows
   const allTypes = new Set([...fByType.keys(), ...lByType.keys()]);
   const comparison = [];
 
   allTypes.forEach(deviceType => {
     const fList = fByType.get(deviceType) || [];
     const lList = lByType.get(deviceType) || [];
-
     const fCount = fList.length;
     const lCount = lList.length;
     const diff = fCount - lCount;
@@ -745,38 +753,79 @@ function compareSite(siteDns, foreseerRows, linxRows, dictMap) {
     );
 
     comparison.push({
-      deviceType,
-      fCount, lCount, diff, pctDiff,
+      deviceType, fCount, lCount, diff, pctDiff,
       fMissingIp, fMissingUid, lMissingSerial, lMissingIp,
-      matchStatus, matchScore,
-      fDevices: fList,
-      lAssets: lList,
+      matchStatus, matchScore, fDevices: fList, lAssets: lList,
     });
   });
 
   comparison.sort((a,b) => Math.abs(b.diff) - Math.abs(a.diff));
-
   return { comparison, issues: knownIssues };
 }
 
 // ============================================================
-// DASHBOARD RENDERING
+// RUN COMPARISON
+// ============================================================
+function runComparison() {
+  document.getElementById('upload-screen').style.display = 'none';
+  document.getElementById('progress-screen').style.display = 'block';
+  setProgress(0, 'Starting...');
+
+  setTimeout(() => {
+    try {
+      setProgress(10, 'Parsing Foreseer data and building site lookup...');
+      const foreseerRows = parseForeseer();
+      console.log('Foreseer rows:', foreseerRows.length);
+
+      setProgress(30, 'Parsing LinX data...');
+      const linxRows = parseLinX();
+      console.log('LinX rows:', linxRows.length);
+
+      setProgress(45, 'Loading asset type dictionary...');
+      const dictMap = parseDict();
+
+      setProgress(55, 'Detecting sites...');
+      const sites = detectSites(foreseerRows, linxRows);
+      state.sites = sites;
+      console.log('Sites found:', sites.length, sites.slice(0,5));
+
+      if (sites.length === 0) {
+        throw new Error('No matching sites found between Foreseer and LinX. Check that both files are the correct exports.');
+      }
+
+      setProgress(65, 'Running comparison for ' + sites.length + ' sites...');
+      sites.forEach((site, i) => {
+        const r = compareSite(site, foreseerRows, linxRows, dictMap);
+        state.results[site] = r.comparison;
+        state.knownIssues[site] = r.issues;
+        if (i % 10 === 0) setProgress(65 + Math.round(i/sites.length*25), 'Comparing site ' + (i+1) + ' of ' + sites.length + '...');
+      });
+
+      setProgress(100, 'Done!');
+      setTimeout(() => { showDashboard(); }, 400);
+
+    } catch(err) {
+      document.getElementById('progress-screen').style.display = 'none';
+      document.getElementById('upload-screen').style.display = 'block';
+      document.getElementById('upload-error').textContent = 'Error: ' + err.message;
+      console.error(err);
+    }
+  }, 150);
+}
+
+// ============================================================
+// DASHBOARD
 // ============================================================
 function showDashboard() {
-  document.getElementById('upload-screen').style.display = 'none';
   document.getElementById('progress-screen').style.display = 'none';
   document.getElementById('dashboard-screen').style.display = 'block';
-
-  // Populate site dropdown
   const sel = document.getElementById('site-select');
   sel.innerHTML = '';
   state.sites.forEach(s => {
     const opt = document.createElement('option');
-    opt.value = s;
-    opt.textContent = s;
+    opt.value = s; opt.textContent = s;
     sel.appendChild(opt);
   });
-
   state.currentSite = state.sites[0];
   renderSite(state.currentSite);
 }
@@ -789,15 +838,11 @@ function switchSite(site) {
 function renderSite(site) {
   const comparison = state.results[site] || [];
   const issues = state.knownIssues[site] || [];
-
-  // Totals
-  let fTotal = 0, lTotal = 0, matchCount = 0;
-  let missingLinx = 0, missingForeseer = 0, countDiff = 0;
-  let totalFMissingIp = 0, totalLMissingSerial = 0, totalLMissingIp = 0;
+  let fTotal=0, lTotal=0, matchCount=0, missingLinx=0, missingForeseer=0, countDiff=0;
+  let totalFMissingIp=0, totalLMissingSerial=0, totalLMissingIp=0;
 
   comparison.forEach(r => {
-    fTotal += r.fCount;
-    lTotal += r.lCount;
+    fTotal += r.fCount; lTotal += r.lCount;
     totalFMissingIp += r.fMissingIp;
     totalLMissingSerial += r.lMissingSerial;
     totalLMissingIp += r.lMissingIp;
@@ -807,45 +852,31 @@ function renderSite(site) {
     else if (r.matchStatus === 'Mismatch / Needs review') countDiff++;
   });
 
-  const matchRate = comparison.length > 0 ? Math.round(matchCount / comparison.filter(r => r.matchStatus !== 'No records in either system').length * 100) : 0;
+  const validTypes = comparison.filter(r => r.matchStatus !== 'No records in either system').length;
+  const matchRate = validTypes > 0 ? Math.round(matchCount / validTypes * 100) : 0;
 
-  // Update metric cards
   document.getElementById('m-foreseer').textContent = fTotal;
   document.getElementById('m-linx').textContent = lTotal;
   document.getElementById('m-match').textContent = matchRate + '%';
   document.getElementById('m-esc').textContent = issues.length;
-
-  // Badges
   document.getElementById('b-missing-linx').textContent = missingLinx + ' types';
   document.getElementById('b-missing-foreseer').textContent = missingForeseer + ' types';
   document.getElementById('b-count-diff').textContent = countDiff + ' types';
   document.getElementById('b-match').textContent = matchCount + ' types';
-
-  // Site badge
   document.getElementById('site-badge').textContent = fTotal + ' foreseer · ' + lTotal + ' linx';
   document.getElementById('top-status').textContent = site;
 
-  // Charts
   renderBarChart(comparison);
   renderCoverageChart(comparison);
-
-  // AI summary
   renderAISummary(site, comparison, issues, fTotal, lTotal);
-
-  // Detail table
   renderDetailTable();
 
-  // Serial/IP tab
   document.getElementById('s-with-serial').textContent = comparison.reduce((a,r) => a + r.lAssets.filter(l => !isPlaceholder(l.serial)).length, 0);
   document.getElementById('s-missing-serial').textContent = totalLMissingSerial;
   document.getElementById('s-missing-ip-f').textContent = totalFMissingIp;
   document.getElementById('s-missing-ip-l').textContent = totalLMissingIp;
   renderSerialTable(comparison);
-
-  // Known issues
   renderIssues(issues);
-
-  // Chat quick buttons
   renderChatQuick(site, comparison);
 }
 
@@ -886,7 +917,7 @@ function renderCoverageChart(comparison) {
     options: {
       responsive: true,
       plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
-      scales: { x: { stacked: false, ticks: { font: { size: 10 } } }, y: { ticks: { font: { size: 10 } } } }
+      scales: { x: { ticks: { font: { size: 10 } } }, y: { ticks: { font: { size: 10 } } } }
     }
   });
 }
@@ -895,51 +926,45 @@ function renderDetailTable() {
   const comparison = state.results[state.currentSite] || [];
   const bucketFilter = document.getElementById('filter-bucket').value;
   const searchFilter = (document.getElementById('filter-search').value || '').toLowerCase();
-
   const filtered = comparison.filter(r => {
     if (bucketFilter !== 'all' && r.matchStatus !== bucketFilter) return false;
     if (searchFilter && !r.deviceType.toLowerCase().includes(searchFilter)) return false;
-    return true;
+    return r.matchStatus !== 'No records in either system';
   });
-
   const wrap = document.getElementById('detail-table-wrap');
   if (filtered.length === 0) {
     wrap.innerHTML = '<p style="color:#aaa;text-align:center;padding:20px;">No results match your filters.</p>';
     return;
   }
-
   let html = `<table><thead><tr>
-    <th>Asset type / subtype</th>
-    <th>Foreseer</th><th>LinX</th><th>Diff</th>
+    <th>Asset type / subtype</th><th>Foreseer</th><th>LinX</th><th>Diff</th>
     <th>Match score</th><th>Bucket</th><th>Notes</th>
   </tr></thead><tbody>`;
-
   filtered.forEach(r => {
     const badgeClass = r.matchStatus === 'Match' ? 'badge-green' :
       r.matchStatus === 'Present in Foreseer, Missing in LinX' ? 'badge-amber' :
       r.matchStatus === 'Present in LinX, Missing in Foreseer' ? 'badge-red' : 'badge-blue';
-
     const diffColor = r.diff > 0 ? '#dc2626' : r.diff < 0 ? '#2563eb' : '#16a34a';
-    const diffStr = r.diff > 0 ? '+' + r.diff : r.diff;
-
+    const diffStr = r.diff > 0 ? '+' + r.diff : String(r.diff);
     const scoreColor = r.matchScore >= 80 ? '#16a34a' : r.matchScore >= 50 ? '#d97706' : '#dc2626';
     const notes = [];
     if (r.pctDiff > 0) notes.push('Count mismatch (' + r.pctDiff + '%)');
     if (r.lMissingSerial > 0) notes.push('LinX missing serials: ' + r.lMissingSerial);
     if (r.lMissingIp > 0) notes.push('LinX missing IP: ' + r.lMissingIp);
     if (r.fMissingIp > 0) notes.push('Foreseer missing IP: ' + r.fMissingIp);
-
+    const bucketShort = r.matchStatus
+      .replace('Present in Foreseer, Missing in LinX','Missing in LinX')
+      .replace('Present in LinX, Missing in Foreseer','Missing in Foreseer')
+      .replace('Mismatch / Needs review','Count differs');
     html += `<tr>
       <td style="font-weight:500;max-width:220px;">${r.deviceType}</td>
       <td>${r.fCount}</td><td>${r.lCount}</td>
       <td style="color:${diffColor};font-weight:600;">${diffStr}</td>
-      <td>
-        <div class="score-bar-wrap">
-          <div class="score-bar-track"><div class="score-bar-fill" style="width:${r.matchScore}%;background:${scoreColor};"></div></div>
-          <span style="font-size:11px;min-width:28px;text-align:right;color:${scoreColor};">${r.matchScore}</span>
-        </div>
-      </td>
-      <td><span class="badge ${badgeClass}">${r.matchStatus.replace('Present in Foreseer, Missing in LinX','Missing in LinX').replace('Present in LinX, Missing in Foreseer','Missing in Foreseer').replace('Mismatch / Needs review','Count differs')}</span></td>
+      <td><div class="score-bar-wrap">
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:${r.matchScore}%;background:${scoreColor};"></div></div>
+        <span style="font-size:11px;min-width:28px;text-align:right;color:${scoreColor};">${r.matchScore}</span>
+      </div></td>
+      <td><span class="badge ${badgeClass}">${bucketShort}</span></td>
       <td class="td-truncate" title="${notes.join('; ')}">${notes.join('; ') || '—'}</td>
     </tr>`;
   });
@@ -950,16 +975,16 @@ function renderDetailTable() {
 function renderSerialTable(comparison) {
   const rows = comparison.filter(r => r.fCount > 0 || r.lCount > 0);
   let html = `<table><thead><tr>
-    <th>Asset type</th><th>Foreseer count</th><th>LinX count</th>
+    <th>Asset type</th><th>Foreseer</th><th>LinX</th>
     <th>LinX missing serial</th><th>LinX missing IP</th><th>Foreseer missing IP</th>
   </tr></thead><tbody>`;
   rows.forEach(r => {
     html += `<tr>
       <td style="font-weight:500;">${r.deviceType}</td>
       <td>${r.fCount}</td><td>${r.lCount}</td>
-      <td style="color:${r.lMissingSerial > 0 ? '#dc2626' : '#16a34a'};">${r.lMissingSerial}</td>
-      <td style="color:${r.lMissingIp > 0 ? '#dc2626' : '#16a34a'};">${r.lMissingIp}</td>
-      <td style="color:${r.fMissingIp > 0 ? '#d97706' : '#16a34a'};">${r.fMissingIp}</td>
+      <td style="color:${r.lMissingSerial>0?'#dc2626':'#16a34a'};">${r.lMissingSerial}</td>
+      <td style="color:${r.lMissingIp>0?'#dc2626':'#16a34a'};">${r.lMissingIp}</td>
+      <td style="color:${r.fMissingIp>0?'#d97706':'#16a34a'};">${r.fMissingIp}</td>
     </tr>`;
   });
   html += '</tbody></table>';
@@ -973,7 +998,6 @@ function renderIssues(issues) {
   document.getElementById('iss-hub').textContent = hubCount;
   document.getElementById('iss-hvac').textContent = hvacCount;
   document.getElementById('iss-bap').textContent = bapCount;
-
   const tbody = document.getElementById('issues-tbody');
   if (issues.length === 0) {
     tbody.innerHTML = '<tr><td colspan="3" style="color:#aaa;text-align:center;padding:20px;">No known issues flagged for this site.</td></tr>';
@@ -984,45 +1008,33 @@ function renderIssues(issues) {
       <td style="color:#666;">${i.reason}</td>
     </tr>`).join('');
   }
-
   const aiText = issues.length === 0
     ? 'No known issues flagged for this site. All devices passed hub code, BAP/FAP, and HVAC generic checks.'
-    : `This site has ${hubCount} hub code mismatches, ${hvacCount} HVAC generic conflicts, and ${bapCount} BAP/FAP contradictions. ` +
-      'Hub code mismatches need team verification before including in comparison. ' +
-      'BAP/FAP conflicts require Foreseer source data correction. ' +
-      'HVAC generic items need subtype mapping guidance from the team.';
+    : `This site has ${hubCount} hub code mismatches, ${hvacCount} HVAC generic conflicts, and ${bapCount} BAP/FAP contradictions. Hub code mismatches need team verification. BAP/FAP conflicts require Foreseer source correction. HVAC generic items need subtype mapping from the team.`;
   document.getElementById('ai-issues-text').textContent = aiText;
 }
 
 function renderAISummary(site, comparison, issues, fTotal, lTotal) {
   const gap = Math.abs(fTotal - lTotal);
   const pct = Math.max(fTotal, lTotal) > 0 ? Math.round(gap / Math.max(fTotal, lTotal) * 100) : 0;
-  const topDisc = comparison.filter(r => r.diff !== 0).slice(0, 2);
+  const topDisc = comparison.filter(r => r.diff !== 0).slice(0, 1);
   const matchCount = comparison.filter(r => r.matchStatus === 'Match').length;
-
   let summary = `${site} has ${fTotal} Foreseer assets and ${lTotal} LinX assets — a ${pct}% gap. `;
   if (topDisc.length > 0) {
     summary += `The biggest discrepancy is ${topDisc[0].deviceType}: Foreseer shows ${topDisc[0].fCount} but LinX has ${topDisc[0].lCount}. `;
   }
   summary += `${matchCount} asset types match cleanly. `;
-  if (issues.length > 0) {
-    summary += `${issues.length} assets are in the Known Issues log and need team input before comparison.`;
-  }
-
+  if (issues.length > 0) summary += `${issues.length} items need team input (known issues log).`;
   document.getElementById('ai-overview-text').textContent = summary;
-
   const actions = document.getElementById('ai-overview-actions');
   actions.innerHTML = '';
-  const btns = [
-    ['Show missing in LinX', () => { drillTo('missing-linx'); }],
-    ['Check known issues', () => { showTab('issues', document.querySelectorAll('.tab')[2]); }],
-    ['Serial / IP status', () => { showTab('serial', document.querySelectorAll('.tab')[3]); }],
-  ];
-  btns.forEach(([label, fn]) => {
+  [
+    ['Show missing in LinX', () => drillTo('missing-linx')],
+    ['Check known issues', () => showTab('issues', document.querySelectorAll('.tab')[2])],
+    ['Serial / IP status', () => showTab('serial', document.querySelectorAll('.tab')[3])],
+  ].forEach(([label, fn]) => {
     const btn = document.createElement('button');
-    btn.className = 'ai-btn';
-    btn.textContent = label + ' →';
-    btn.onclick = fn;
+    btn.className = 'ai-btn'; btn.textContent = label + ' →'; btn.onclick = fn;
     actions.appendChild(btn);
   });
 }
@@ -1039,15 +1051,11 @@ function renderChatQuick(site, comparison) {
   wrap.innerHTML = '';
   prompts.forEach(p => {
     const btn = document.createElement('button');
-    btn.className = 'ai-btn';
-    btn.textContent = p + ' →';
+    btn.className = 'ai-btn'; btn.textContent = p + ' →';
     btn.onclick = () => { document.getElementById('chat-input').value = p; sendChat(); };
     wrap.appendChild(btn);
   });
-
-  // Set initial chat message
-  const log = document.getElementById('chat-log');
-  log.innerHTML = `<div class="chat-msg-ai">
+  document.getElementById('chat-log').innerHTML = `<div class="chat-msg-ai">
     <div class="chat-who">✦ AI assistant</div>
     I have ${site} loaded. Ask me anything about the comparison results, known issues, what to fix first, or what to bring to your team meeting.
   </div>`;
@@ -1061,18 +1069,12 @@ async function sendChat() {
   const q = input.value.trim();
   if (!q) return;
   input.value = '';
-
   const log = document.getElementById('chat-log');
   log.innerHTML += `<div class="chat-msg-user"><span>${q}</span></div>`;
-  log.scrollTop = log.scrollHeight;
-
   const thinkingId = 'thinking-' + Date.now();
   log.innerHTML += `<div class="chat-msg-ai" id="${thinkingId}"><div class="chat-who">✦ AI assistant</div><em style="color:#aaa;">Thinking...</em></div>`;
   log.scrollTop = log.scrollHeight;
-
-  const context = buildContext();
-  const answer = await callClaude(q, context);
-
+  const answer = await callClaude(q, buildContext());
   document.getElementById(thinkingId).innerHTML = `<div class="chat-who">✦ AI assistant</div>${answer}`;
   log.scrollTop = log.scrollHeight;
 }
@@ -1081,38 +1083,31 @@ function buildContext() {
   const site = state.currentSite;
   const comparison = state.results[site] || [];
   const issues = state.knownIssues[site] || [];
-
-  const top10 = comparison.slice(0, 10).map(r =>
+  const top10 = comparison.slice(0,10).map(r =>
     `${r.deviceType}: Foreseer=${r.fCount}, LinX=${r.lCount}, status=${r.matchStatus}, score=${r.matchScore}`
   ).join('\n');
-
   return `You are an expert data analyst helping with the GIG Data Integrity initiative at Comcast.
-The project reconciles asset data between Foreseer (system of record for asset existence) and LinX (system of record for asset naming/types).
-NAMI is the canonical site identity source.
+The project reconciles asset data between Foreseer (system of record for asset existence) and LinX (system of record for asset naming/types). NAMI is the canonical site identity source.
 
 Current site: ${site}
-Foreseer total assets: ${comparison.reduce((a,r) => a+r.fCount, 0)}
-LinX total assets: ${comparison.reduce((a,r) => a+r.lCount, 0)}
+Foreseer total assets: ${comparison.reduce((a,r)=>a+r.fCount,0)}
+LinX total assets: ${comparison.reduce((a,r)=>a+r.lCount,0)}
 Known issues requiring escalation: ${issues.length}
 
 Top asset type results:
 ${top10}
 
 Known issues:
-${issues.map(i => `- ${i.name}: ${i.type} — ${i.reason}`).join('\n') || 'None'}
+${issues.map(i=>`- ${i.name}: ${i.type} — ${i.reason}`).join('\n')||'None'}
 
-Answer the user's question concisely and practically. Reference specific asset types and counts from the data above when relevant. 
-If asked about priorities, recommend fixing "Present in Foreseer, Missing in LinX" items first since Foreseer is the system of record.
-Keep answers to 3-5 sentences unless more detail is needed.`;
+Answer concisely and practically. Reference specific asset types and counts. If asked about priorities, recommend fixing "Present in Foreseer, Missing in LinX" items first since Foreseer is the system of record. Keep answers to 3-5 sentences unless more detail is needed.`;
 }
 
 async function callClaude(question, context) {
-  // Check for API key
   if (!state.apiKey) {
     state.apiKey = prompt('Enter your Anthropic API key to enable AI chat (starts with sk-ant-):');
-    if (!state.apiKey) return 'API key required to use AI chat. Please refresh and try again.';
+    if (!state.apiKey) return 'API key required. Please try again.';
   }
-
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -1133,7 +1128,7 @@ async function callClaude(question, context) {
     if (data.error) return 'API error: ' + data.error.message;
     return data.content?.[0]?.text || 'No response received.';
   } catch(err) {
-    return 'Could not reach the AI. Check your API key and try again. Error: ' + err.message;
+    return 'Could not reach the AI. Check your API key. Error: ' + err.message;
   }
 }
 
@@ -1164,19 +1159,7 @@ function setProgress(pct, msg) {
   document.getElementById('progress-msg').textContent = msg;
 }
 
-function showLoading(msg) {
-  document.getElementById('upload-screen').style.display = 'none';
-  document.getElementById('progress-screen').style.display = 'block';
-  setProgress(0, msg);
-}
-
-function hideLoading() {
-  document.getElementById('progress-screen').style.display = 'none';
-}
-
-function resetTool() {
-  location.reload();
-}
+function resetTool() { location.reload(); }
 </script>
 </body>
 </html>
